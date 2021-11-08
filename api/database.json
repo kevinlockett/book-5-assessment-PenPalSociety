@@ -1,0 +1,60 @@
+{
+    "members": [
+        {
+            "id": 1,
+            "nameFirst": "Jon",
+            "nameLast": "Duckett",
+            "emailAddress": "john.duckett@wiley.com"
+        },
+        {
+            "id": 2,
+            "nameFirst": "Rachel",
+            "nameLast": "Andrew",
+            "emailAddress": "randrew@sitepoint.org"
+        },
+        {
+            "id": 3,
+            "nameFirst": "Eric A.",
+            "nameLast": "Meyer",
+            "emailAddress": "emeyer@newriders.com"
+        },
+        {
+            "id": 4,
+            "nameFirst": "Ann",
+            "nameLast": "Boehm",
+            "emailAddress": "annb@murach.com"
+        },
+        {
+            "id": 5,
+            "nameFirst": "Charles",
+            "nameLast": "Babbage",
+            "emailAddress": "chuckieb@founders.org"
+        }
+    ],
+    "topics": [
+        {
+            "id": 1,
+            "genre": "Business"
+        },
+        {
+            "id": 2,
+            "genre": "Condolences"
+        },
+        {
+            "id": 3,
+            "genre": "Congratulations"
+        },
+        {
+            "id": 4,
+            "genre": "Family"
+        },
+        {
+            "id": 5,
+            "genre": "Friendly"
+        }
+
+    ],
+    "letters":[
+
+    ]
+}

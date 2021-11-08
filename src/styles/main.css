@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import "general.css";
+
+
+/* CUSTOM PROPERTIES
+--------------------------------------------------------------*/
+:root {
+	--clr-neutral-100: #fff;
+	--clr-neutral-200: #ead3a4;
+	--clr-neutral-300: #c9a457;
+	--clr-neutral-500: #835332;
+	--clr-neutral-700: #744a30;
+	--clr-neutral-900: #242320;
+
+	--clr-accent-parchment-opaque: rgba(234, 211, 164, .3);
+	--clr-accent-quill: #db9a2c;
+
+	--ff-primary: "Comfortaa", Arial, sans-serif;
+	--ff-accent: "Patua One", serif;
+
+	--box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
+	--spacer: 1rem;
+}
+
+
+/* RESET
+--------------------------------------------------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* TYPOGRAPHY
+--------------------------------------------------------------*/
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: var(--ff-primary);
+	font-size: 1.25rem;
+	font-weight: 400;
+	color: var(--clr-neutral-700);
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--ff-accent);
+  letter-spacing: 2px;
+}
+
+
+/* UTILITY CLASSES
+--------------------------------------------------------------*/
+.container {
+	padding: 0 var(--spacer);
+	max-width: 90rem;
+	margin: 0 auto;
+}
+
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	font-weight: 700;
+	font-size: 1.125rem;
+	padding: .5em 1.5em;
+	cursor: pointer;
+	background: var(--clr-accent-quill);
+	color: var(--clr-neutral-100);
+}
+
+.button {
+	transition: all 0.3s ease 0s;
+}
+
+.shadow {
+	box-shadow: var(--box-shadow);
+}
+
+/* GENERAL STYLING
+--------------------------------------------------------------*/
+
+/* GENERAL STYLING
+--------------------------------------------------------------*/
+
+.header {
+    margin: var(--spacer) auto;
+    display: flex;
+    justify-content: flex-start;
+	align-items: center;
+}
+
+.img--header {
+	max-width: 8rem;
+}
+
+.main-content {
+	max-width: 95%;
+	margin: 0 auto;
+}
+
+.label {
+	font-weight: 700;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	margin: var(--spacer) 0;
+}
+
+.authors,
+.recipients {
+	background: var(--clr-accent-parchment-opaque);
+}
+
+.radio-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:first baseline;
+}
+
+.radio-button {
+	padding-right: var(--spacer);
+}
+
+.footer {
+	color: var(--clr-neutral-700);
+	font-weight: 500;
+	font-size: .75rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacer);
+	margin: var(--spacer) 0;
+}
+
+.footer--left {
+	display: flex;
+	align-items: center;
+}
+
+.footer--right 	{
+	display: flex;
+	justify-content: flex-end;
+	align-content: center;
+}
+
+.img--footer {
+	margin-right: .5rem;
+}
