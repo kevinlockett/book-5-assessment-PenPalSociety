@@ -1,96 +1,74 @@
-import { getMembers, getTopics } from "./dataAccess.js"
+import { getLetterWriter, sendLetter } from './dataAccess.js'
+import { selectAuthor } from './selectAuthor.js'
+import { selectTopic } from './selectTopic.js'
+import { selectRecipient } from './selectRecipient.js'
 
-// Make radio buttons for topics
+// Make event listener for Send Letter button
 
-const makeTopicButtons = () => {
+const mainContainer = document.querySelector('#container')
 
-    const topics = getTopics()
+mainContainer.addEventListener("click", clickEvent => {
+
+    if (clickEvent.target.id === "sendLetter") {
     
-    let topicHTML = `
-        <div class="field field--Topics">
-            <label class="label" for="topics">Topics</label>
-                <div class="radio-buttons">
-        `
-    
-        const topicList = topics.map(topic => {
+        const writerChoices = getLetterWriter()
 
-            return `<div class='radio-button'><input type='radio' name='topic' value='${topic.id}' /> ${topic.genre}</div>`
+        const letterContent = document.querySelector("textarea[name='letter']").value
 
-        })
+        const dataToSendToAPI = {
+            authorId: parseInt(writerChoices.authorId),
+            content: letterContent,
+            topicId: parseInt(writerChoices.topicId),
+            recipientId: parseInt(writerChoices.recipientId),
+            date: new Date().toLocaleDateString('en-US')
+        }
 
-    topicHTML += topicList.join('')
-
-    return topicHTML
-
-}
+        sendLetter(dataToSendToAPI)
+    }
+})
 
 // Export Letter HTML to PenPalSociety
 
 export const WriteLetter = () => {
 
-    const members = getMembers()
+    // CREATE HTML
 
-    let writeLetterHTML = ``
-
-    // AUTHOR
-
-    writeLetterHTML += `    
-
-        <div class="field field--authors">
-            <label class="label" for="author">Author</label>
-            <select class="authors" id="authors">
-            <option class="btn selector--title" value="">Choose author</option>
-                ${members.map(member => {
-                    return `<option value="authorId--${member.id}">${member.nameFirst} ${member.nameLast}
-                    </option>`}).join("")
-                }
-            </select>
-        </div>
+    let writeLetterHTML = `
+    
+        <h2>Write a letter</h2>
+        
     `
 
-    // LETTER
+    // INSERT AUTHOR HTML
+
+    writeLetterHTML += selectAuthor()
+
+    // INSERT LETTER HTML
 
     writeLetterHTML += `
     
         <div class="field field--letter">
             <label class="label" for="letter">Letter</label>
-            <textarea rows="5" id="letter" name="letter">
+            <textarea columns= "30" rows="5" id="letter" name="letter">
             </textarea>
         </div>
     `
 
-    // TOPICS
+    // INSERT TOPIC HTML
+
+    writeLetterHTML += selectTopic()
+
+    // INSERT RECIPIENT HTML
+
+    writeLetterHTML += selectRecipient()
+
+    // CREATE SEND LETTER BUTTON
 
     writeLetterHTML += `
-    
-                ${makeTopicButtons()}
-            </div>
-        </div>    
-    `
-    // RECIPIENT
-
-    writeLetterHTML += `
-    
-        <div class="field field--members">
-            <label class="label" for="recipient">Recipient</label>
-            <select class="recipients" id="recipients">
-            <option class="btn selector--title" value="">Choose recipient</option>
-                ${members.map(member => {
-                    return `<option value="recipientId--${member.id}">${member.nameFirst} ${member.nameLast}
-                    </option>`}).join("")
-                }
-            </select>
-        </div>
-
-    `
-
-    // BUTTON
-
-    writeLetterHTML += `
-    
         <button class="btn button button--send shadow" id="sendLetter">Send Letter</button>
-
     `
+
+    // RETURN HTML
 
     return writeLetterHTML
 

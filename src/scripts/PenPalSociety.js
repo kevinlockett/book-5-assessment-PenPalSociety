@@ -1,5 +1,6 @@
 import { Header } from "./Header.js"
 import { WriteLetter } from "./WriteLetter.js"
+import { DisplayLetters } from "./DisplayLetters.js"
 import { Footer } from "./Footer.js"
 
 export const PenPalSociety = () => {
@@ -9,7 +10,12 @@ export const PenPalSociety = () => {
            ${Header()}
         </header>
         <main class='main-content'>
-            ${WriteLetter()}
+            <section class="write-letter">
+                ${WriteLetter()}            
+            </section>
+            <section class="display-letters">
+                ${DisplayLetters()}
+            </section>
         </main>
         <footer class='footer'>
             ${Footer()}

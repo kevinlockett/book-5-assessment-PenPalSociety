@@ -10,10 +10,13 @@
 	--clr-neutral-300: #c9a457;
 	--clr-neutral-500: #835332;
 	--clr-neutral-700: #744a30;
+	--clr-neutral-800: #462816 ;
 	--clr-neutral-900: #242320;
 
 	--clr-accent-parchment-opaque: rgba(234, 211, 164, .3);
+	--clr-accent-parchment-opaque-2: rgba(201, 164, 87, .5);
 	--clr-accent-quill: #db9a2c;
+	--clr-accent-quill-opaque: rgba(219, 154, 44, .8);
 
 	--ff-primary: "Comfortaa", Arial, sans-serif;
 	--ff-accent: "Patua One", serif;
@@ -149,6 +152,57 @@ h1,h2,h3,h4,h5,h6 {
 .radio-button {
 	padding-right: var(--spacer);
 }
+
+.write-letter {
+	padding: var(--spacer) 0;
+}
+
+.display-letters {
+	margin: 2rem auto;
+	padding: var(--spacer) 0;
+}
+
+.letter {
+	margin: var(--spacer) auto;
+	padding: 2rem;
+}
+
+.letter:nth-child(even) {
+	border: 2px solid var(--clr-neutral-300);
+	background: var(--clr-accent-parchment-opaque);
+	color: var(--clr-neutral-700);
+	font-weight: 600;
+}
+
+.letter:nth-child(odd) {
+	border: 2px solid var(--clr-neutral-500);
+	background: var(--clr-accent-parchment-opaque-2);
+	color: var(--clr-neutral-800);
+	font-weight: 600;
+}
+
+.ltr {
+	margin: var(--spacer) 0;
+}
+
+.letter--email,
+.letter--date {
+	font-weight: 400;
+}
+
+.letter--topic {
+	display: inline-block;
+	text-decoration: none;
+	letter-spacing: .1rem;
+	font-weight: 600;
+	font-size: 1.125rem;
+	padding: .5em 1.5em;
+	background: var(--clr-accent-quill-opaque);
+	color: var(--clr-neutral-800);
+	border-radius: 1.6rem;
+	align-content: center;
+}
+
 
 .footer {
 	color: var(--clr-neutral-700);
