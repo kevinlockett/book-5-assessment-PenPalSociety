@@ -1,4 +1,4 @@
-const API = "http://localhost:8088"
+const API = "https://penpal-api-4uj6v.ondigitalocean.app"
 const mainContainer = document.querySelector("#container")
 
 const applicationState = {
